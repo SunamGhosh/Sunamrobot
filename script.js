@@ -56,7 +56,7 @@ async function gemini(prompt) {
   responseContainer.classList.add('show');
 
   try {
-    const res = await fetch('https://chatbot-app-m8uw.onrender.com/', {
+    const res = await fetch('https://chatbot-app-m8uw.onrender.com/gemini', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt })
@@ -110,3 +110,4 @@ historyIcon.onclick = () => {
   if (historyDiv.classList.contains('show')) updateHistoryDisplay();
 
 };
+
