@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunam Bot</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fafc;
+      color: #111827;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      background-color: #202123;
+      width: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 0;
+    }
+    .sidebar .icon {
+      width: 40px;
+      height: 40px;
+      margin: 16px 0;
+      fill: #d1d5db;
+      cursor: pointer;
+      transition: fill 0.2s ease;
+    }
+    .sidebar .icon:hover, .sidebar .icon.active { fill: #56a1f0; }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 24px;
+    }
+    .header {
+      height: 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 13px;
+      color: #6b7280;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .header .notice {
+      background: #e0e7ff;
+      color: #4338ca;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 4px 12px;
+      text-decoration: none;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+    .history { display: none; max-width: 640px; width: 100%; margin-bottom: 20px; }
+    .history.show { display: block; }
+    .history-item {
+      background: #fff; padding: 12px; border-radius: 8px;
+      border: 1px solid #e5e7eb; margin-bottom: 10px; cursor: pointer;
+    }
+    .history-item:hover { background: #f9fafb; }
+    .question-asked p { font-weight: 600; color: #111827; }
+    .response-text p {
+      background: #fff; padding: 12px; border-radius: 8px;
+      border: 1px solid #e5e7eb; color: #111827;
+    }
+    .input-box {
+      display: flex; border: 1px solid #d1d5db; border-radius: 9999px;
+      background-color: #fff; padding: 10px 16px; max-width: 640px;
+    }
+    .input-box input {
+      flex: 1; border: none; outline: none; font-size: 16px;
+      color: #111827; background: transparent;
+    }
+    .input-box button { background: transparent; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <svg class="icon active" id="history-icon" viewBox="0 0 24 24">
+      <path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm4 10V6h4v2h-3v2h3v2h-3v2h3v2h-4v-6z"/>
+    </svg>
+  </nav>
+  <main class="main">
+    <header class="header">
+      <a href="#" class="notice">Welcome to Sunam Bot</a>
+    </header>
+    <section class="content">
+      <div class="history" id="history"></div>
+      <div class="response-container">
+        <div class="question-asked"><p></p></div>
+        <div class="response-text"><p></p></div>
+      </div>
+      <div class="chat-container">
+        <h1>What can I help with?</h1>
+        <form class="input-box" onsubmit="return false;">
+          <input type="text" class="ask" placeholder="Ask anything..." />
+          <button type="button" class="send-button">➤</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Chat</title>
+</head>
+<body>
+  <h1>Gemini Chatbot</h1>
+  <textarea id="prompt" placeholder="Ask something..."></textarea>
+  <button id="send">Send</button>
+  <pre id="response"></pre>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
